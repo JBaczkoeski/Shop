@@ -24,16 +24,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Strona główna</a>
+                    <a class="nav-link active" aria-current="page" href="/">Strona główna</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Produkty</a>
+                    <a class="nav-link active" href="/products">Produkty</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active">Wyprzedaż</a>
+                    <a class="nav-link active" href="#">Wyprzedaż</a>
                 </li>
             </ul>
-            <form class="container col-8 row">
+            <form class="container col-7 row">
                 <div class="container col-8 me-0">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 </div>
@@ -42,6 +42,9 @@
                 </div>
             </form>
             <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item me-4">
+                    <a class="nav-link active" href="#">Koszyk</a>
+                </li>
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
