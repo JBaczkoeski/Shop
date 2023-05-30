@@ -21,6 +21,9 @@ Route::get('/products', function (){
     return view('user.products');
 });
 
+Route::get('/product', function (){
+    return view('user.product');
+});
 
 Auth::routes();
 

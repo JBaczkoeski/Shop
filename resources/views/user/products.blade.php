@@ -64,6 +64,7 @@
         </div>
         <div class="container col-9 text-center py-5 ps-5">
             <div class="row ps-5">
+                <hr>
                 @for($i = 1; $i <= 6; $i++)
                     <div class="card mx-3 my-3 col-12 col-lg-3 border-0 text-center" style="background-color: #f8f9fa">
                         <img class="card-img-top rounded-3 mt-3" src="{{ url('storage/Product/mac-book.jpg') }}"
@@ -80,7 +81,7 @@
                                     <div class="col-6 mt-2">17"</div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-success">Sprawdź</a>
+                            <a href="/product" class="btn btn-success">Sprawdź</a>
                         </div>
                     </div>
                 @endfor
