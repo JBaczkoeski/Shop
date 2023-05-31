@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('user.welcome');
-});
+})->name('welcome');
 
 Route::get('/products', function (){
     return view('user.products');
@@ -27,3 +28,23 @@ Route::get('/product', function (){
 
 Auth::routes();
 
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+
+
+});
+
+/*
+All Admin Routes List
+*/
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+
+    Route::get('/admin/dashboard', [HomeController::class, 'adminHome'])->name('admin.dashboard');
+});
+
+/*
+All warehouse Routes List
+*/
+Route::middleware(['auth', 'user-access:warehouse'])->group(function () {
+
+    Route::get('/warehouse/dashboard', [HomeController::class, 'warehouseHome'])->name('warehouse.dashboard');
+});

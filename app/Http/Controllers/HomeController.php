@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
@@ -19,10 +20,20 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\UrlGenerator|\Illuminate\Foundation\Application|string
      */
     public function index()
     {
-        return view('home');
+        return url('/');
+    }
+
+    public function adminHome(): View
+    {
+        return view('admin.dashboard');
+    }
+
+    public function warehouseHome(): View
+    {
+        return view('warehouse.dashboard');
     }
 }
