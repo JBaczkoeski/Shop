@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Product extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -20,13 +20,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'phone_number',
-        'postcode',
-        'country',
-        'address',
-        'password',
-        'type',
+        'producer_id',
+        'price',
+        'promo_price',
+        'code',
+        'stock',
+        'image',
     ];
 
     /**
@@ -55,4 +54,9 @@ class User extends Authenticatable
             get: fn ($value) =>  ["user", "admin", "warehouse"][$value],
         );
     }
+
+    public function producer()
+{
+    return $this->hasMany(Producer::class);
+}
 }
