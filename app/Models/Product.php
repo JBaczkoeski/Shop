@@ -2,9 +2,8 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -26,6 +25,12 @@ class Product extends Authenticatable
         'code',
         'stock',
         'image',
+        'producer_id',
+        'product_type_id',
+        'processor_id',
+        'ram_id',
+        'screen_diagonal_id',
+        'color_id'
     ];
 
     /**
@@ -48,15 +53,39 @@ class Product extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected function type(): Attribute
+    public function producer(): BelongsTo
     {
-        return new Attribute(
-            get: fn ($value) =>  ["user", "admin", "warehouse"][$value],
-        );
+        return $this->belongsTo(Producer::class);
     }
 
-    public function producer()
-{
-    return $this->hasMany(Producer::class);
-}
+    public function productsTypes(): BelongsTo
+    {
+        return $this->belongsTo(ProductType::class);
+    }
+
+    public function processor(): BelongsTo
+    {
+        return $this->belongsTo(Processor::class);
+    }
+
+    public function graphic(): BelongsTo
+    {
+        return $this->belongsTo(Graphic::class);
+    }
+
+    public function ram(): BelongsTo
+    {
+        return $this->belongsTo(Ram::class);
+    }
+
+    public function screenDiagonal(): BelongsTo
+    {
+        return $this->belongsTo(ScreenDiagonal::class);
+    }
+
+    public function color(): BelongsTo
+    {
+        return $this->belongsTo(Color::class);
+    }
+
 }

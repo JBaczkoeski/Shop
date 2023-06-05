@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row justify-content-center p-1">
-        <img src="{{ url('storage/Images/baner.png') }}" alt="Computer image" class="rounded-5">
+        <img src="{{ url('storage/Images/banner.png') }}" alt="Computer image" class="rounded-5">
         <div class="container col-12 py-2">
             <hr>
             <h1 class="text-center">Polecamy</h1>

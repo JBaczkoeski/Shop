@@ -15,7 +15,7 @@ class CreateUsersSeeder extends Seeder
     {
         $users = [
             [
-                'name'=>'Admin User',
+                'name'=>'User',
                 'email'=>'admin@exc.com',
                 'phone_number'=> '0',
                 'postcode' => '0',
@@ -26,7 +26,7 @@ class CreateUsersSeeder extends Seeder
                 'password'=> bcrypt('123456'),
             ],
             [
-                'name'=>'Warehouse User',
+                'name'=>'User',
                 'email'=>'warehouse@exc.com',
                 'phone_number'=> '0',
                 'postcode' => '0',

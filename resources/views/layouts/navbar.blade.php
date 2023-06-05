@@ -27,7 +27,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Strona główna</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/products">Produkty</a>
+                    <a class="nav-link active" href="{{route('products.index')}}">Produkty</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Wyprzedaż</a>
@@ -65,12 +65,13 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Moje konto </a>
+                            <a class="dropdown-item" href="#">Moje zamówienia</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 Wyloguj
                             </a>
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>

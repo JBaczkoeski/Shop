@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.adminNavbar')
 
 @section('content')
     <div class="row shadow">
@@ -20,11 +20,11 @@
                     <hr>
                     <p>Procesor: {{$product->processor->processor}}</p>
                     <p>Pamięć: {{$product->ram->capacity}} Gb</p>
-                    <p>Grafika: {{$product->graphic->graphic}}</p>
+                    <p>Grafika: RTX1660 M</p>
                     <p>Typ ekranu: Matowy,LED</p>
                 </div>
-                <div class="container col-6 border border-2 rounded-5 text-end pt-4 pe-5 mb-5">
-                    <h2 class="my-4">{{$product->price}} zł</h2>
+                <div class="container col-6 border border-2 rounded-5 text-end pt-4 pe-5">
+                    <h2 class="my-4">3999 zł</h2>
                     <form method="post" action="" class="row">
                         <div class="col-3">
                             <select class="form-select">

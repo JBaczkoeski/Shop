@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.adminNavbar')
 
 @section('content')
     <div class="row">
@@ -100,6 +100,9 @@
         </div>
         <div class="container col-9 text-center py-5 ps-5">
             <div class="row ps-5">
+                <div class="col-3 mb-3">
+                    <a href="{{ route('adminProducts.create') }}" class="btn btn-success">Dodaj produkt :)</a>
+                </div>
                 <hr>
                 @foreach( $products as $product)
                     <div class="card mx-3 my-3 col-12 col-lg-4 border-0 text-center" style="background-color: #f8f9fa">
@@ -117,7 +120,9 @@
                                     <div class="col-6 mt-2">{{$product->screenDiagonal->diagonal}}</div>
                                 </div>
                             </div>
-                            <a href="{{ route('products.show', $product->id) }}" class="btn btn-info">Sprawdź</a>
+                            <a href="{{ route('adminProducts.show', $product->id) }}" class="btn btn-info">Sprawdź</a>
+                            <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">Edytuj</a>
+                            <a href="{{ url('products.destroy', $product->id) }}" class="btn btn-danger">Usuń</a>
                         </div>
                     </div>
                 @endforeach
